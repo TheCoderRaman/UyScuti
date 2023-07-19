@@ -4,7 +4,7 @@ namespace Tests\Feature\App\Utility\Queues;
 
 use Exception;
 use Tests\TestCase;
-use App\Models\UrlQueue;
+use App\Models\UrlQueueAtlas;
 use App\Utility\Crawler\Queues\QueueList;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -18,7 +18,7 @@ class QueueListTest extends TestCase
      */
     public function testIsNotQueued(): void
     {
-        UrlQueue::truncate();
+        UrlQueueAtlas::truncate();
 
         $queueList = app(QueueList::class);
 
@@ -38,7 +38,7 @@ class QueueListTest extends TestCase
      */
     public function testIsQueued(): void
     {
-        UrlQueue::truncate();
+        UrlQueueAtlas::truncate();
 
         $queueList = app(QueueList::class);
 
@@ -58,7 +58,7 @@ class QueueListTest extends TestCase
      */
     public function testUnCrawled(): void
     {
-        UrlQueue::truncate();
+        UrlQueueAtlas::truncate();
 
         $queueList = app(QueueList::class);
 
@@ -68,7 +68,7 @@ class QueueListTest extends TestCase
 
         $queueList->unCrawled($url);
 
-        $queuesAfter = UrlQueue::all();
+        $queuesAfter = UrlQueueAtlas::all();
 
         $this->assertTrue(
             $queuesAfter->first()->crawled === 0
@@ -82,7 +82,7 @@ class QueueListTest extends TestCase
      */
     public function testCrawled(): void
     {
-        UrlQueue::truncate();
+        UrlQueueAtlas::truncate();
 
         $queueList = app(QueueList::class);
 
@@ -92,7 +92,7 @@ class QueueListTest extends TestCase
 
         $queueList->crawled($url);
 
-        $queuesAfter = UrlQueue::all();
+        $queuesAfter = UrlQueueAtlas::all();
 
         $this->assertTrue(
             $queuesAfter->first()->crawled === 1
@@ -106,11 +106,11 @@ class QueueListTest extends TestCase
      */
     public function testGetAll(): void
     {
-        UrlQueue::truncate();
+        UrlQueueAtlas::truncate();
 
         $queueList = app(QueueList::class);
 
-        $queuesBefore = UrlQueue::all();
+        $queuesBefore = UrlQueueAtlas::all();
 
         $queueList->addUrls([
             "http://example.com/1",
@@ -120,7 +120,7 @@ class QueueListTest extends TestCase
             "http://example.com/5"
         ]);
 
-        $queuesAfter = UrlQueue::all();
+        $queuesAfter = UrlQueueAtlas::all();
 
         $this->assertEquals($queuesAfter->map(
                 fn($queue) => $queue->url
@@ -139,11 +139,11 @@ class QueueListTest extends TestCase
      */
     public function testGetUrls(): void
     {
-        UrlQueue::truncate();
+        UrlQueueAtlas::truncate();
 
         $queueList = app(QueueList::class);
 
-        $queuesBefore = UrlQueue::all();
+        $queuesBefore = UrlQueueAtlas::all();
 
         $queueList->addUrls([
             "http://example.com/1",
@@ -153,7 +153,7 @@ class QueueListTest extends TestCase
             "http://example.com/5"
         ]);
 
-        $queuesAfter = UrlQueue::all();
+        $queuesAfter = UrlQueueAtlas::all();
 
         $ids = ($queuesAfter->reverse()->map(
             fn($queue) => $queue->id)->toArray()
@@ -176,17 +176,17 @@ class QueueListTest extends TestCase
      */
     public function testGetUrl(): void
     {
-        UrlQueue::truncate();
+        UrlQueueAtlas::truncate();
 
         $queueList = app(QueueList::class);
 
-        $queuesBefore = UrlQueue::all();
+        $queuesBefore = UrlQueueAtlas::all();
 
         $queueList->addUrl(
             "http://example.com/3"
         );
 
-        $queuesAfter = UrlQueue::all();
+        $queuesAfter = UrlQueueAtlas::all();
 
         $id = $queuesAfter->first()->id;
 
@@ -209,11 +209,11 @@ class QueueListTest extends TestCase
      */
     public function testGetIds(): void
     {
-        UrlQueue::truncate();
+        UrlQueueAtlas::truncate();
 
         $queueList = app(QueueList::class);
 
-        $queuesBefore = UrlQueue::all();
+        $queuesBefore = UrlQueueAtlas::all();
 
         $queueList->addUrls([
             "http://example.com/1",
@@ -223,7 +223,7 @@ class QueueListTest extends TestCase
             "http://example.com/5"
         ]);
 
-        $queuesAfter = UrlQueue::all();
+        $queuesAfter = UrlQueueAtlas::all();
 
         $urls = ($queuesAfter->reverse()->map(
             fn($queue) => $queue->url)->toArray()
@@ -246,17 +246,17 @@ class QueueListTest extends TestCase
      */
     public function testGetId(): void
     {
-        UrlQueue::truncate();
+        UrlQueueAtlas::truncate();
 
         $queueList = app(QueueList::class);
 
-        $queuesBefore = UrlQueue::all();
+        $queuesBefore = UrlQueueAtlas::all();
 
         $queueList->addUrl(
             $url = "http://example.com/3"
         );
 
-        $queuesAfter = UrlQueue::all();
+        $queuesAfter = UrlQueueAtlas::all();
 
         $this->assertEquals($queuesAfter->filter(
                 fn($queue) => (
@@ -277,11 +277,11 @@ class QueueListTest extends TestCase
      */
     public function testAddUrls(): void
     {
-        UrlQueue::truncate();
+        UrlQueueAtlas::truncate();
 
         $queueList = app(QueueList::class);
 
-        $queuesBefore = UrlQueue::all();
+        $queuesBefore = UrlQueueAtlas::all();
 
         $queueList->addUrls([
             "http://example.com/1",
@@ -291,7 +291,7 @@ class QueueListTest extends TestCase
             "http://example.com/5"
         ]);
 
-        $queuesAfter = UrlQueue::all();
+        $queuesAfter = UrlQueueAtlas::all();
 
         $this->assertEquals($queuesAfter->map(
             fn($queue) => $queue->url
@@ -313,11 +313,11 @@ class QueueListTest extends TestCase
      */
     public function testAddUrl(): void
     {
-        UrlQueue::truncate();
+        UrlQueueAtlas::truncate();
 
         $queueList = app(QueueList::class);
 
-        $queuesBefore = UrlQueue::all();
+        $queuesBefore = UrlQueueAtlas::all();
 
         $queueList->addUrl("http://example.com/1");
         $queueList->addUrl("http://example.com/2");
@@ -325,7 +325,7 @@ class QueueListTest extends TestCase
         $queueList->addUrl("http://example.com/4");
         $queueList->addUrl("http://example.com/5");
 
-        $queuesAfter = UrlQueue::all();
+        $queuesAfter = UrlQueueAtlas::all();
 
         $this->assertEquals($queuesAfter->map(
             fn($queue) => $queue->url
@@ -363,11 +363,11 @@ class QueueListTest extends TestCase
      */
     public function testRemoveUrls(): void
     {
-        UrlQueue::truncate();
+        UrlQueueAtlas::truncate();
 
         $queueList = app(QueueList::class);
 
-        $queuesBefore = UrlQueue::all();
+        $queuesBefore = UrlQueueAtlas::all();
 
         $queueList->addUrls([
             "http://example.com/1",
@@ -382,7 +382,7 @@ class QueueListTest extends TestCase
             "http://example.com/3"
         ]);
 
-        $queuesAfter = UrlQueue::all();
+        $queuesAfter = UrlQueueAtlas::all();
 
         $this->assertEquals($queuesAfter->map(
             fn($queue) => $queue->url
@@ -402,11 +402,11 @@ class QueueListTest extends TestCase
      */
     public function testRemoveUrl(): void
     {
-        UrlQueue::truncate();
+        UrlQueueAtlas::truncate();
 
         $queueList = app(QueueList::class);
 
-        $queuesBefore = UrlQueue::all();
+        $queuesBefore = UrlQueueAtlas::all();
 
         $queueList->addUrls([
             "http://example.com/1",
@@ -423,7 +423,7 @@ class QueueListTest extends TestCase
             "http://example.com/3"
         );
 
-        $queuesAfter = UrlQueue::all();
+        $queuesAfter = UrlQueueAtlas::all();
 
         $this->assertEquals($queuesAfter->map(
             fn($queue) => $queue->url

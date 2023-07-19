@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b552916c42ed87c4256ece7d1bd8a917",
+    "content-hash": "9cb7c29e07fbba1bb4364338bc79a55e",
     "packages": [
         {
             "name": "ashallendesign/favicon-fetcher",
@@ -76,6 +76,95 @@
                 }
             ],
             "time": "2023-03-23T14:10:39+00:00"
+        },
+        {
+            "name": "bakame/laravel-domain-parser",
+            "version": "1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kevindierkx/laravel-domain-parser.git",
+                "reference": "8f7cc7064279dcfce6e2fa76526d99e2d4c045a1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kevindierkx/laravel-domain-parser/zipball/8f7cc7064279dcfce6e2fa76526d99e2d4c045a1",
+                "reference": "8f7cc7064279dcfce6e2fa76526d99e2d4c045a1",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^7.2",
+                "illuminate/config": "^10.0",
+                "illuminate/support": "^10.0",
+                "jeremykendall/php-domain-parser": "^6.2",
+                "php": "^8.1",
+                "psr/http-factory": "^1.0",
+                "psr/simple-cache": "^1.0|^2.0|^3.0"
+            },
+            "require-dev": {
+                "distortedfusion/php-cs-fixer-config": "^2.0",
+                "nunomaduro/larastan": "^2.4",
+                "orchestra/testbench": "^8.0",
+                "phpstan/phpstan-phpunit": "^1.3",
+                "phpstan/phpstan-strict-rules": "^1.4",
+                "phpunit/phpunit": "^9.5.10"
+            },
+            "suggest": {
+                "guzzlehttp/guzzle": "To use an alternate HTTP Client"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Bakame\\Laravel\\Pdp\\ServiceProvider"
+                    ],
+                    "aliases": {
+                        "Rules": "Bakame\\Laravel\\Pdp\\Facades\\Rules",
+                        "TopLevelDomains": "Bakame\\Laravel\\Pdp\\Facades\\TopLevelDomains"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bakame\\Laravel\\Pdp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kevin Dierkx",
+                    "email": "kevin@distortedfusion.com",
+                    "homepage": "https://distortedfusion.com"
+                },
+                {
+                    "name": "Ignace Nyamagana Butera",
+                    "homepage": "http://nyamsprod.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/kevindierkx/laravel-domain-parser/graphs/contributors"
+                }
+            ],
+            "description": "Laravel package to integrate PHP Domain parser.",
+            "homepage": "https://distortedfusion.com/docs/kevindierkx/laravel-domain-parser",
+            "keywords": [
+                "distortedfusion",
+                "domain parser",
+                "iana",
+                "icann",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/kevindierkx/laravel-domain-parser/issues",
+                "source": "https://github.com/kevindierkx/laravel-domain-parser"
+            },
+            "time": "2023-07-17T11:44:40+00:00"
         },
         {
             "name": "brick/math",
@@ -1188,6 +1277,99 @@
                 }
             ],
             "time": "2022-05-21T17:30:32+00:00"
+        },
+        {
+            "name": "jeremykendall/php-domain-parser",
+            "version": "6.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jeremykendall/php-domain-parser.git",
+                "reference": "34c7177cf322771fc241b9dcc8eda89f41a0149c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jeremykendall/php-domain-parser/zipball/34c7177cf322771fc241b9dcc8eda89f41a0149c",
+                "reference": "34c7177cf322771fc241b9dcc8eda89f41a0149c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-filter": "*",
+                "ext-intl": "*",
+                "ext-json": "*",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^v3.13.2",
+                "guzzlehttp/guzzle": "^7.5",
+                "guzzlehttp/psr7": "^1.6 || ^2.4.3",
+                "phpstan/phpstan": "^1.10.3",
+                "phpstan/phpstan-phpunit": "^1.3.8",
+                "phpstan/phpstan-strict-rules": "^1.5.0",
+                "phpunit/phpunit": "^10.0.12",
+                "psr/http-factory": "^1.0.1",
+                "psr/simple-cache": "^1.0.1",
+                "symfony/cache": "^v5.0.0 || ^v6.0.0"
+            },
+            "suggest": {
+                "league/uri": "To parse URL and validate host",
+                "psr/http-client-implementation": "To use the storage functionnality which depends on PSR-18",
+                "psr/http-factory-implementation": "To use the storage functionnality which depends on PSR-17",
+                "psr/simple-cache-implementation": "To use the storage functionnality which depends on PSR-16"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pdp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeremy Kendall",
+                    "homepage": "https://about.me/jeremykendall",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Ignace Nyamagana Butera",
+                    "homepage": "https://nyamsprod.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/jeremykendall/php-domain-parser/graphs/contributors"
+                }
+            ],
+            "description": "Public Suffix List and IANA Root Zone Database based Domain parsing implemented in PHP.",
+            "homepage": "https://github.com/jeremykendall/php-domain-parser",
+            "keywords": [
+                "PSL",
+                "Public Suffix List",
+                "Top Level Domains",
+                "domain parsing",
+                "iana",
+                "icann",
+                "idn",
+                "tld"
+            ],
+            "support": {
+                "issues": "https://github.com/jeremykendall/php-domain-parser/issues",
+                "source": "https://github.com/jeremykendall/php-domain-parser"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/nyamsprod",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-02-25T16:31:15+00:00"
         },
         {
             "name": "laravel/framework",

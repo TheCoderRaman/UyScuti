@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "60f686f4-c88a-4daa-a197-43eab5982341",
+		"name": "UyScoti",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19883506"
+	},
+	"item": [
+		{
+			"name": "JwtAuth",
+			"item": [
+				{
+					"name": "Auth Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "John Doe",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "3424323@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "JohnDoe@12345",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "JohnDoe@12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://uyscuti.test/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"uyscuti",
+								"test"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						},
+						"description": "Jwt Registration API Endpoint"
+					},
+					"response": []
+				},
+				{
+					"name": "Auth Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "johndoe@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "JohnDoe@12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://uyscuti.test/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"uyscuti",
+								"test"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						},
+						"description": "Jwt Login API Endpoint"
+					},
+					"response": []
+				},
+				{
+					"name": "Auth Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vdXlzY3V0aS50ZXN0L2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNjg5NzkzNDUzLCJleHAiOjE2ODk3OTcwNTMsIm5iZiI6MTY4OTc5MzQ1MywianRpIjoiQllKTXpNMUNvMGM1NkdmdiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.V1bBXs-d8RdizBwdC0ih7wHfURBOzeIfF8rx9zhc7aw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://uyscuti.test/api/auth/user-profile",
+							"protocol": "http",
+							"host": [
+								"uyscuti",
+								"test"
+							],
+							"path": [
+								"api",
+								"auth",
+								"user-profile"
+							]
+						},
+						"description": "Jwt Profile Api Endpoint"
+					},
+					"response": []
+				},
+				{
+					"name": "Auth Refresh",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vdXlzY3V0aS50ZXN0L2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNjg5NzkzNDUzLCJleHAiOjE2ODk3OTcwNTMsIm5iZiI6MTY4OTc5MzQ1MywianRpIjoiQllKTXpNMUNvMGM1NkdmdiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.V1bBXs-d8RdizBwdC0ih7wHfURBOzeIfF8rx9zhc7aw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://uyscuti.test/api/auth/refresh",
+							"protocol": "http",
+							"host": [
+								"uyscuti",
+								"test"
+							],
+							"path": [
+								"api",
+								"auth",
+								"refresh"
+							]
+						},
+						"description": "Jwt Refresh API Endpoint"
+					},
+					"response": []
+				},
+				{
+					"name": "Auth Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vdXlzY3V0aS50ZXN0L2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNjg5NzkzNzk1LCJleHAiOjE2ODk3OTczOTUsIm5iZiI6MTY4OTc5Mzc5NSwianRpIjoiTWlVaEFGUWQ3eUkxZ2c3RCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.GH2DSAUa5l5GN5cQc1cAfrHeAR4LtZuP-CxudPwJxzY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://uyscuti.test/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"uyscuti",
+								"test"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						},
+						"description": "Jwt Logout API Endpoint"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

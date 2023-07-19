@@ -53,7 +53,7 @@ class AuthController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function register(Request $request) 
-    {dd(Lang::get('auth.user_successfully_registered'));
+    {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|between:2,100',
             'password' => 'required|string|confirmed|min:6',
@@ -72,7 +72,7 @@ class AuthController extends Controller
         ));
 
         return response()->json([
-            'message' => Lang::get('auth.User successfully registered'), 'user' => $user
+            'message' => Lang::get('auth.registered'), 'user' => $user
         ], 201);
     }
 
@@ -86,7 +86,7 @@ class AuthController extends Controller
         auth()->logout();
 
         return response()->json([
-            'message' => trans('auth.User successfully signed out')
+            'message' => trans('auth.signed_out')
         ]);
     }
 

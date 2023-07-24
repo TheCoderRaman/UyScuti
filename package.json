@@ -9,28 +9,27 @@
         "build": "vite build"
     },
     "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
-        ]
+      "extends": [
+        "react-app",
+        "react-app/jest"
+      ]
     },
     "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
     },
     "dependencies": {
         "@reduxjs/toolkit": "^1.9.5",
         "@testing-library/jest-dom": "^5.17.0",
         "@vitejs/plugin-react-refresh": "^1.3.6",
-        "dotenv": "^16.3.1",
         "i18next": "^23.2.11",
         "i18next-browser-languagedetector": "^7.1.0",
         "localstorage-slim": "^2.4.0",

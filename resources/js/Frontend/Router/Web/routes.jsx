@@ -1,3 +1,4 @@
+import Home from "@/Pages/Home";
 import Error from "@/Pages/Error";
 
 /**
@@ -16,7 +17,7 @@ export const routes = {
     Home: {
         name: "Home",
         path: '/',
-        element: <>Home</>
+        element: <Home />
     },
     SignIn: {
         name: "Sign In",

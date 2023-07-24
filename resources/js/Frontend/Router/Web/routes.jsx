@@ -1,6 +1,7 @@
 import Home from "@/Pages/Home";
 import Error from "@/Pages/Error";
 import Search from "@/Pages/Search";
+import SignIn from "@/Pages/SignIn";
 import SignUp from "@/Pages/SignUp";
 
 /**
@@ -24,7 +25,7 @@ export const routes = {
     SignIn: {
         name: "Sign In",
         path: '/sign-in',
-        element: <>Sign In</>
+        element: <SignIn />
     },
     SignUp: {
         name: "Sign Up",

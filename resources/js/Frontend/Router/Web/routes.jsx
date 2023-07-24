@@ -15,5 +15,10 @@ export const routes = {
         name: "Home",
         path: '/',
         element: <>Home</>
+    },
+    Search: {
+        name: "Search",
+        path: '/search',
+        element: <>Search</>
     }
 };

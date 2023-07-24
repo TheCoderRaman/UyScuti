@@ -1,3 +1,5 @@
+import Error from "@/Pages/Error";
+
 /**
  * This module give us a single location for altering any
  * route in the entire application at any point of 
@@ -9,7 +11,7 @@ export const routes = {
     Error: {
         name: "Error",
         path: "*",
-        element: <>Error</>
+        element: <Error />
     },
     Home: {
         name: "Home",

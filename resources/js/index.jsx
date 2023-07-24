@@ -5,12 +5,19 @@
  */
 
 import './bootstrap';
-
-import App from './Frontent/App';
+import App from '@/App';
 import React from 'react';
-import ReactDom from 'react-dom';
+import { Provider } from 'react-redux';
+import { store } from "@/Redux/stores/store";
+import { createRoot } from 'react-dom/client';
 
-ReactDom.render(
-  <App />, document.getElementById('root'),
+const root = createRoot(
+  document.getElementById("root")
+);
+
+root.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
 );
 

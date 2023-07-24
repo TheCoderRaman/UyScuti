@@ -26,18 +26,6 @@
         "last 1 safari version"
       ]
     },
-    "devDependencies": {
-        "@popperjs/core": "^2.11.6",
-        "@vitejs/plugin-react": "^2.2.0",
-        "axios": "^1.1.2",
-        "bootstrap": "^5.2.3",
-        "laravel-mix": "^6.0.49",
-        "laravel-vite-plugin": "^0.7.5",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "sass": "^1.56.1",
-        "vite": "^4.0.0"
-    },
     "dependencies": {
         "@reduxjs/toolkit": "^1.9.5",
         "@testing-library/jest-dom": "^5.17.0",
@@ -51,5 +39,17 @@
         "react-router": "^6.14.2",
         "react-router-dom": "^6.14.2",
         "redux": "^4.2.1"
+    },
+    "devDependencies": {
+        "@popperjs/core": "^2.11.6",
+        "@vitejs/plugin-react": "^2.2.0",
+        "axios": "^1.1.2",
+        "bootstrap": "^5.2.3",
+        "laravel-mix": "^6.0.49",
+        "laravel-vite-plugin": "^0.7.5",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "sass": "^1.56.1",
+        "vite": "^4.0.0"
     }
 }

@@ -6,5 +6,9 @@
  * @var const Object routes
  */
 export const routes = {
-    //
+    Error: {
+        name: "Error",
+        path: "*",
+        element: <></>
+    }
 };

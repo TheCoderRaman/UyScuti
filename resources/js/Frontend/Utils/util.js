@@ -4,3 +4,5 @@ export { env } from '@/Utils/func/env';
 export { isEmpty } from '@/Utils/func/isEmpty';
 // Routes related stuffs
 export { route, routeName } from '@/Utils/func/route';
+// Convert given string to boolean
+export { stringToBoolean } from '@/Utils/func/stringToBoolean'

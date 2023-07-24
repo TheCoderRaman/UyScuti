@@ -9,22 +9,22 @@
         "build": "vite build"
     },
     "eslintConfig": {
-      "extends": [
-        "react-app",
-        "react-app/jest"
-      ]
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
     },
     "browserslist": {
-      "production": [
-        ">0.2%",
-        "not dead",
-        "not op_mini all"
-      ],
-      "development": [
-        "last 1 chrome version",
-        "last 1 firefox version",
-        "last 1 safari version"
-      ]
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
     },
     "dependencies": {
         "@reduxjs/toolkit": "^1.9.5",
@@ -33,6 +33,7 @@
         "i18next": "^23.2.11",
         "i18next-browser-languagedetector": "^7.1.0",
         "localstorage-slim": "^2.4.0",
+        "react-dotenv": "^0.1.3",
         "react-helmet": "^6.1.0",
         "react-i18next": "^13.0.2",
         "react-redux": "^8.1.1",

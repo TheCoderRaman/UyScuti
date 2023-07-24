@@ -16,6 +16,11 @@ export const routes = {
         path: '/',
         element: <>Home</>
     },
+    SignIn: {
+        name: "Sign In",
+        path: '/sign-in',
+        element: <>Sign In</>
+    },
     SignUp: {
         name: "Sign Up",
         path: '/sign-up',

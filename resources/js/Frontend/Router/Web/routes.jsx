@@ -1,6 +1,7 @@
 import Home from "@/Pages/Home";
 import Error from "@/Pages/Error";
 import Search from "@/Pages/Search";
+import SignUp from "@/Pages/SignUp";
 
 /**
  * This module give us a single location for altering any
@@ -28,7 +29,7 @@ export const routes = {
     SignUp: {
         name: "Sign Up",
         path: '/sign-up',
-        element: <>Sign Up</>
+        element: <SignUp />
     },
     Search: {
         name: "Search",

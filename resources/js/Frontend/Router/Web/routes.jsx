@@ -9,6 +9,11 @@ export const routes = {
     Error: {
         name: "Error",
         path: "*",
-        element: <></>
+        element: <>Error</>
+    },
+    Home: {
+        name: "Home",
+        path: '/',
+        element: <>Home</>
     }
 };

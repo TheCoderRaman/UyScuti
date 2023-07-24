@@ -11,6 +11,7 @@ import { Provider } from 'react-redux';
 import { store } from "@/Redux/stores/store";
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import TranslationProvider from '@/Providers/TranslationProvider';
 
 const root = createRoot(
   document.getElementById("root")
@@ -18,9 +19,11 @@ const root = createRoot(
 
 root.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <TranslationProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </TranslationProvider>
   </Provider>
 );
 

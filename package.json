@@ -1,4 +1,7 @@
 {
+    "name": "uyscuti",
+    "description": "Search Engine using laravel as backend and react as frontend.",
+    "version": "1.0.0",
     "private": true,
     "type": "module",
     "scripts": {
@@ -19,6 +22,7 @@
     },
     "dependencies": {
         "@reduxjs/toolkit": "^1.9.5",
+        "@testing-library/jest-dom": "^5.17.0",
         "@vitejs/plugin-react-refresh": "^1.3.6",
         "i18next": "^23.2.11",
         "i18next-browser-languagedetector": "^7.1.0",

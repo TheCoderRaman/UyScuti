@@ -1,8 +1,9 @@
 import { 
   useState, 
   useEffect 
-} from 'react';
+} from "react";
 
+import { Helmet } from 'react-helmet';
 import { useSelector } from 'react-redux';
 import { routeName } from '@/Utils/util';
 import { routes } from '@/Router/Web/routes';
@@ -27,6 +28,11 @@ export default function Web(props) {
 
   return (
     <>
+      <Helmet>
+        {/* Here we handle any changes to the document head. */}
+        <title>{t(settings.app.name)+" | "+t(route)}</title>
+      </Helmet>
+
       {/* Children */}
       {props.children}
 

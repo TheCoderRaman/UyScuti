@@ -1,5 +1,6 @@
 import Home from "@/Pages/Home";
 import Error from "@/Pages/Error";
+import Search from "@/Pages/Search";
 
 /**
  * This module give us a single location for altering any
@@ -32,6 +33,6 @@ export const routes = {
     Search: {
         name: "Search",
         path: '/search',
-        element: <>Search</>
+        element: <Search />
     }
 };

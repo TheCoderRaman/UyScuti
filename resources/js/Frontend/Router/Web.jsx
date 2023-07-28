@@ -7,13 +7,13 @@ import { Helmet } from 'react-helmet';
 import { useSelector } from 'react-redux';
 import { routeName } from '@/Utils/util';
 import { routes } from '@/Router/Web/routes';
-import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
+import { useLaravelReactI18n } from 'laravel-react-i18n';
 
 export default function Web(props) {
-  const { t } = useTranslation();
   const location = useLocation();
+  const { t } = useLaravelReactI18n();
   const [route,setRoute] = useState(null);
   
   const settings = useSelector(

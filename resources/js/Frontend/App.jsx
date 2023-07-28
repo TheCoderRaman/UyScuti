@@ -1,11 +1,12 @@
 import React from 'react';
 import Web from '@/Router/Web';
+import ThemeProvider from '@/Providers/ThemeProvider.jsx';
 
 function App() {
   return (
-    <div className="app-uyscuti">
+    <ThemeProvider>
       <Web />
-    </div>
+    </ThemeProvider>
   )
 }
 

@@ -41,6 +41,7 @@
     "devDependencies": {
         "@popperjs/core": "^2.11.6",
         "@vitejs/plugin-react": "^2.2.0",
+        "autoprefixer": "^10.4.14",
         "axios": "^1.1.2",
         "bootstrap": "^5.2.3",
         "laravel-mix": "^6.0.49",

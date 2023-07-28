@@ -7,6 +7,7 @@
         <title>UyScuti</title>
         
         @viteReactRefresh
+        @vite('resources/css/app.css')
         @vite('resources/js/index.jsx')
     </head>
     <body class="antialiased">

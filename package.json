@@ -42,7 +42,8 @@
         "react-router": "^6.14.2",
         "react-router-dom": "^6.14.2",
         "redux": "^4.2.1",
-        "use-debounce": "^9.0.4"
+        "use-debounce": "^9.0.4",
+        "yup": "^1.2.0"
     },
     "devDependencies": {
         "@popperjs/core": "^2.11.6",

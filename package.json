@@ -45,7 +45,8 @@
         "redux": "^4.2.1",
         "url-pattern": "^1.0.3",
         "use-debounce": "^9.0.4",
-        "yup": "^1.2.0"
+        "yup": "^1.2.0",
+        "yup-password": "^0.2.2"
     },
     "devDependencies": {
         "@popperjs/core": "^2.11.6",

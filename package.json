@@ -46,6 +46,7 @@
         "redux": "^4.2.1",
         "url-pattern": "^1.0.3",
         "use-debounce": "^9.0.4",
+        "yet-another-react-lightbox": "^3.12.0",
         "yup": "^1.2.0",
         "yup-password": "^0.2.2"
     },

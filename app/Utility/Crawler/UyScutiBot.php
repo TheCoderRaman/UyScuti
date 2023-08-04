@@ -63,6 +63,7 @@ class UyScutiBot
         $this->crawler = $crawler;
         $this->queueList = $queueList;
 
+        $this->initializeCrawler();
         $this->registerCoreObservers();
         
         static::$typeSniffer = app(TypeSniffer::class);
@@ -158,6 +159,20 @@ class UyScutiBot
                 }
             })
         );
+    }
+
+    /**
+     * Initialize crawl.
+     * 
+     * @return void
+     */
+    protected function initializeCrawler()
+    {
+        $this->crawler->setConcurrency(
+            env('CRAWLER_CONCURRENCY',1)
+        )->setUserAgent(
+            env('CRAWLER_NAME','UyScuti').'-Bot'
+        )->setDelayBetweenRequests(150);
     }
 
     /**

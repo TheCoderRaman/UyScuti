@@ -16,7 +16,11 @@ export const backendRoutes = {
     version: 'v1',
     baseUrl: "/api",
     web: {
-        //
+        AuthProfile: {
+            name: "Profile",
+            path: "profile",
+            prefix: "auth",
+        }
     }
 };
 

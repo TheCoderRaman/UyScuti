@@ -6,10 +6,16 @@
 
 import './index.css';
 import './bootstrap';
+import 'yet-another-react-lightbox/styles.css';
+import 'yet-another-react-lightbox/styles.css';
+import 'react-modal-video/scss/modal-video.scss';
+import 'yet-another-react-lightbox/plugins/counter.css';
+import 'yet-another-react-lightbox/plugins/captions.css';
+
 import App from '@/App';
 import React from 'react';
 import { Provider } from 'react-redux';
-import { store } from "@/Redux/stores/store";
+import { store } from '@/Redux/stores/store';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import TranslationProvider from '@/Providers/TranslationProvider';

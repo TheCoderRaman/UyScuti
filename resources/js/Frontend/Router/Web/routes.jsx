@@ -50,6 +50,11 @@ export const backendRoutes = {
             name: "Label",
             path: "label",
             prefix: "search",
+        },
+        SearchResult: {
+            name: "Result",
+            path: "result",
+            prefix: "search",
         }
     }
 };

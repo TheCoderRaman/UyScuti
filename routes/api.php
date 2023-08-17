@@ -52,5 +52,15 @@ Route::middleware(['api','throttle:60,1'])->group(function () {
         Route::prefix('contact')->group(function () {
             //
         });
+
+        /**
+         * All routes related to newsletter.
+         *
+         * @method GET|POST|PUT|PATCH|HEAD|DELETE|OPTIONS
+         * @see http://domain.tld/api/v1/newsletter
+         */
+        Route::prefix('newsletter')->group(function () {
+            //
+        });
     });
 });

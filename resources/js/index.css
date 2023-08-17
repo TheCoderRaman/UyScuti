@@ -19,3 +19,47 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem
+}
+
+@media (min-width: 450px) {
+  .container {
+      max-width:450px
+  }
+}
+
+@media (min-width: 575px) {
+  .container {
+      max-width:575px
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+      max-width:768px
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+      max-width:992px
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+      max-width:1200px
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+      max-width:1400px
+  }
+}

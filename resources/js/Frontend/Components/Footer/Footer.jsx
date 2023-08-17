@@ -9,7 +9,7 @@ function Footer() {
     const { t } = useLaravelReactI18n();
 
     return (
-        <footer className="mt-auto max-[439px]:fixed bottom-0 left-0 w-full">
+        <footer className="mt-auto bottom-0 left-0 w-full">
             <div className="flex-1 flex-wrap text-[#70757a] dark:text-[#9aa0a6] bg-[#f2f2f2] dark:bg-[#171717] inset-x-0 bottom-0">
                 <div className="flow-root p-2.5 border-[#dadce0] dark:border-[#3c4043] border-b-[1px]">
                     <div className="float-left">{getCountry()}</div>

@@ -65,6 +65,11 @@ export const backendRoutes = {
             name: "Redirect",
             path: "redirect",
             prefix: "search",
+        },
+        ContactStore: {
+            name: "Ticket",
+            path: "ticket",
+            prefix: "contact",
         }
     }
 };

@@ -40,6 +40,11 @@ export const backendRoutes = {
             name: "Refresh",
             path: "refresh",
             prefix: "auth",
+        },
+        AuthLogout: {
+            name: "Logout",
+            path: "logout",
+            prefix: "auth",
         }
     }
 };

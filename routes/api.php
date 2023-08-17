@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\Auth\AuthController;
 use App\Http\Controllers\Api\V1\Bot\CrawlerController;
 use App\Http\Controllers\Api\V1\Contact\TicketController;
+use App\Http\Controllers\Api\V1\NewsLetter\SubscriberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,7 +85,9 @@ Route::middleware(['api','throttle:60,1'])->group(function () {
          * @see http://domain.tld/api/v1/newsletter
          */
         Route::prefix('newsletter')->group(function () {
-            //
+            Route::resource('/subscriber', SubscriberController::class,[
+                'as' => 'v1#api'
+            ]);
         });
 
         /**

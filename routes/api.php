@@ -42,5 +42,15 @@ Route::middleware(['api','throttle:60,1'])->group(function () {
         Route::prefix('bot')->group(function () {
             //
         });
+
+        /**
+         * All routes related to contact.
+         *
+         * @method GET|POST|PUT|PATCH|HEAD|DELETE|OPTIONS
+         * @see http://domain.tld/api/v1/contact
+         */
+        Route::prefix('contact')->group(function () {
+            //
+        });
     });
 });

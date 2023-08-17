@@ -1,40 +1,67 @@
-import Home from "@/Pages/Home";
-import Error from "@/Pages/Error";
-import Search from "@/Pages/Search";
-import SignIn from "@/Pages/SignIn";
-import SignUp from "@/Pages/SignUp";
+import Home from '@/Pages/Home/Home.jsx';
+import Error from '@/Pages/Error/Error.jsx';
+import About from '@/Pages/About/About.jsx';
+import Search from '@/Pages/Search/Search.jsx';
+import SignIn from '@/Pages/SignIn/SignIn.jsx';
+import SignUp from '@/Pages/SignUp/SignUp.jsx';
+import Profile from '@/Pages/Profile/Profile.jsx';
+import Contact from '@/Pages/Contact/Contact.jsx';
 
 /**
- * This module give us a single location for altering any
- * route in the entire application at any point of 
- * time in the future.
- * 
- * @var const Object routes
+ * All application frontend routes will be defined here.
+ *
+ * @var const frontendRoutes
  */
-export const routes = {
-    Error: {
-        name: "Error",
-        path: "*",
-        element: <Error />
-    },
-    Home: {
-        name: "Home",
-        path: '/',
-        element: <Home />
-    },
-    SignIn: {
-        name: "Sign In",
-        path: '/sign-in',
-        element: <SignIn />
-    },
-    SignUp: {
-        name: "Sign Up",
-        path: '/sign-up',
-        element: <SignUp />
-    },
-    Search: {
-        name: "Search",
-        path: '/search',
-        element: <Search />
+export const frontendRoutes = {
+    baseUrl: "/",
+    web: {
+        Error: {
+            name: "Error",
+            path: "*",
+            layout: 'minimal',
+            element: <Error />
+        },
+        Home: {
+            name: "Home",
+            path: '/',
+            layout: 'maximal',
+            element: <Home />
+        },
+        SignIn: {
+            name: "Sign In",
+            path: '/sign-in',
+            layout: 'auth',
+            element: <SignIn />
+        },
+        SignUp: {
+            name: "Sign Up",
+            path: '/sign-up',
+            layout: 'auth',
+            element: <SignUp />
+        },
+        Profile: {
+            name: "Profile",
+            path: '/profile',
+            layout: 'auth',
+            element: <Profile />
+        },
+        Search: {
+            name: "Search",
+            path: '/search',
+            layout: 'maximal',
+            element: <Search />
+        },
+        About: {
+            name: "About",
+            path: '/about',
+            layout: 'maximal',
+            element: <About />
+        },
+        Contact: {
+            name: "Contact",
+            path: '/contact',
+            layout: 'maximal',
+            element: <Contact />
+        }
     }
 };

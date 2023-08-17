@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+// Api version v1 controllers
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,5 +16,13 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::middleware(['api','throttle:60,1'])->group(function () {
-    //
+    /**
+     * All api routes for version: v1
+     *
+     * @method GET|POST
+     * @see http://domain.tld/api/v1
+     */
+    Route::prefix('v1')->group(function () {
+        //
+    });
 });

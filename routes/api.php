@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 // Api version v1 controllers
 use App\Http\Controllers\Api\V1\Auth\AuthController;
+use App\Http\Controllers\Api\V1\Bot\CrawlerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,7 +59,9 @@ Route::middleware(['api','throttle:60,1'])->group(function () {
          * @see http://domain.tld/api/v1/bot
          */
         Route::prefix('bot')->group(function () {
-            //
+            (Route::post('/crawl', [
+                CrawlerController::class, 'crawl'])->name('v1#api.bot.crawl')
+            );
         });
 
         /**

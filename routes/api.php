@@ -23,6 +23,14 @@ Route::middleware(['api','throttle:60,1'])->group(function () {
      * @see http://domain.tld/api/v1
      */
     Route::prefix('v1')->group(function () {
-        //
+        /**
+         * All routes related to authentication.
+         *
+         * @method GET|POST
+         * @see http://domain.tld/api/v1/auth
+         */
+        Route::prefix('auth')->group(function () {
+            //
+        });
     });
 });

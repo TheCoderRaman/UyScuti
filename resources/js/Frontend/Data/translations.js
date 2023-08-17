@@ -6,6 +6,10 @@
 export const translations = {
     locale: "en",
     loading: false,
-    locales: ['en'],
-    fallbackLocale: "en"
+    fallbackLocale: "en",
+    availableLocales: [],
+    locales: {
+        en: "English",
+        hi: "Hindi",
+    },
 };

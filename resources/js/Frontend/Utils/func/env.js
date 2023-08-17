@@ -11,9 +11,9 @@ export function env(key, value = null)
 {
     key = `VITE_${key}`;
 
-    if(isEmpty(import.meta.env[key])){
+    if(isEmpty(import.meta.env?.[key])){
         return value;
     }
 
-    return import.meta.env[key];
+    return import.meta.env?.[key];
 }

@@ -45,6 +45,11 @@ export const backendRoutes = {
             name: "Logout",
             path: "logout",
             prefix: "auth",
+        },
+        SearchLabel: {
+            name: "Label",
+            path: "label",
+            prefix: "search",
         }
     }
 };

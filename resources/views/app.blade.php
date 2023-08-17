@@ -10,7 +10,7 @@
         @vite('resources/css/app.css')
         @vite('resources/js/index.jsx')
     </head>
-    <body class="antialiased">
+    <body className="antialiased">
       <div id="root"></div>
     </body>
 </html>

@@ -4,15 +4,15 @@ import Footer from '@/Components/Footer/Footer.jsx';
 
 function MaximalLayout(props) {
     return (
-        <div className="flex flex-col min-h-screen h-[100%] justify-between  bg-[#fff] dark:bg-[#202124] text-[#202124] dark:text[#bdc1c6] min-w-[650px]">
+        <div className="flex flex-col min-h-screen h-[100%] justify-between bg-[#fff] dark:bg-[#202124] text-[#202124] dark:text[#bdc1c6] min-w-[650px]">
             {/* Header Section */}
             <Header />
 
             {/* Main Section */}
-            <main className="main-layout">
+            <main className="main-layout flex flex-col">
                 {props.children}
             </main>
-            
+
             {/* Footer Section */}
             <Footer />
         </div>

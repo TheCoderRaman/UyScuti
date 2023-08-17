@@ -50,6 +50,17 @@ export const translationsSlice = createSlice({
         },
 
         /**
+         * Set current available available locales.
+         *
+         * @param any state
+         * @param any action
+         * @return void
+         */
+        setAvailableLocales: (state, action) => {
+            state.value.availableLocales = action.payload;
+        },
+
+        /**
          * Reset translations setting to its initial state.
          * 
          * @param any state
@@ -67,6 +78,7 @@ export const {
     setLocales, 
     setLoading, 
     setFallbackLocale, 
+    setAvailableLocales,
     reset 
 } = translationsSlice.actions;
 

@@ -5,7 +5,11 @@ use Illuminate\Support\Facades\Route;
 // Api version v1 controllers
 use App\Http\Controllers\Api\V1\Auth\AuthController;
 use App\Http\Controllers\Api\V1\Bot\CrawlerController;
+use App\Http\Controllers\Api\V1\Search\LabelController;
+use App\Http\Controllers\Api\V1\Search\ResultController;
 use App\Http\Controllers\Api\V1\Contact\TicketController;
+use App\Http\Controllers\Api\V1\Search\RedirectController;
+use App\Http\Controllers\Api\V1\Search\SuggestionController;
 use App\Http\Controllers\Api\V1\NewsLetter\SubscriberController;
 
 /*
@@ -97,7 +101,18 @@ Route::middleware(['api','throttle:60,1'])->group(function () {
          * @see http://domain.tld/api/v1/search
          */
         Route::prefix('search')->group(function () {
-            //
+            (Route::post('/label', [
+                LabelController::class, 'label'])->name('v1#api.search.label')
+            );
+            (Route::post('/result', [
+                ResultController::class, 'result'])->name('v1#api.search.result')
+            );
+            (Route::get('/redirect', [
+                RedirectController::class, 'redirect'])->name('v1#api.search.redirect')
+            );
+            (Route::post('/suggest', [
+                SuggestionController::class, 'suggest'])->name('v1#api.search.suggest')
+            );
         });
     });
 });

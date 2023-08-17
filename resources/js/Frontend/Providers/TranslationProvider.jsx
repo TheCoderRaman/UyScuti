@@ -1,5 +1,5 @@
-import React,{ 
-    useState, useEffect 
+import React, {
+    useState, useEffect
 } from 'react';
 
 import { localStorage as ls } from '@/Modules/module';
@@ -15,20 +15,21 @@ function TranslationProvider(props) {
         (state) => state.translations.value
     );
 
-    const [ locale, setLocale ] = useState(
+    const [locale, setLocale] = useState(
         translations.locale
     );
 
     useEffect(() => {
-        const locale = ls.get('locale', {
+        let localLocale = ls.get('locale', {
             decrypt: false
         });
 
-        setLocale((null !== locale)
-            ? locale : translations.locale
-        );
+        setLocale(localLocale = (
+            (null !== localLocale)
+                ? localLocale : translations.locale
+        ));
 
-        dispatch(setCurrentLocale(locale));
+        dispatch(setCurrentLocale(localLocale));
     });
 
     return (

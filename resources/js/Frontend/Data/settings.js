@@ -5,7 +5,7 @@
  */
 export const settings = {
     app: {
-        name: 'Uy Scuti',
+        name: 'UyScuti',
         shorName: 'UyScuti',
         summary: 'Search Engine using laravel as backend and react as frontend.'
     }

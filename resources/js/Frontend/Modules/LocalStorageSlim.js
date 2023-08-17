@@ -1,5 +1,6 @@
 import ls from 'localstorage-slim';
-import { env, stringToBoolean } from './../Utils/util';
+import { env } from '@/Utils/func/env';
+import { stringToBoolean } from '@/Utils/func/stringToBoolean';
 
 export default function createLocalStorageSlim(){ 
     ls.config.secret = env('APP_SECRET');

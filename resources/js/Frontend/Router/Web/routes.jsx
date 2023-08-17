@@ -20,6 +20,11 @@ export const backendRoutes = {
             name: "Profile",
             path: "profile",
             prefix: "auth",
+        },
+        AuthUpdate: {
+            name: "Update",
+            path: "update",
+            prefix: "auth",
         }
     }
 };

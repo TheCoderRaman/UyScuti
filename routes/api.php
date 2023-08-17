@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 // Api version v1 controllers
 use App\Http\Controllers\Api\V1\Auth\AuthController;
 use App\Http\Controllers\Api\V1\Bot\CrawlerController;
+use App\Http\Controllers\Api\V1\Contact\TicketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,7 +72,9 @@ Route::middleware(['api','throttle:60,1'])->group(function () {
          * @see http://domain.tld/api/v1/contact
          */
         Route::prefix('contact')->group(function () {
-            //
+            Route::resource('/ticket', TicketController::class,[
+                'as' => 'v1#api'
+            ]);
         });
 
         /**

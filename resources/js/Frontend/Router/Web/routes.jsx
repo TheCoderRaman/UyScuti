@@ -8,6 +8,19 @@ import Profile from '@/Pages/Profile/Profile.jsx';
 import Contact from '@/Pages/Contact/Contact.jsx';
 
 /**
+ * All application backend routes will be defined here.
+ *
+ * @var const backends
+ */
+export const backendRoutes = {
+    version: 'v1',
+    baseUrl: "/api",
+    web: {
+        //
+    }
+};
+
+/**
  * All application frontend routes will be defined here.
  *
  * @var const frontendRoutes

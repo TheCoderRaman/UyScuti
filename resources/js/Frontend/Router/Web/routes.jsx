@@ -30,6 +30,11 @@ export const backendRoutes = {
             name: "Login",
             path: "login",
             prefix: "auth",
+        },
+        AuthRegister: {
+            name: "Register",
+            path: "register",
+            prefix: "auth",
         }
     }
 };

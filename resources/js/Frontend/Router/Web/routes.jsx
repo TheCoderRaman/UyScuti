@@ -70,6 +70,11 @@ export const backendRoutes = {
             name: "Ticket",
             path: "ticket",
             prefix: "contact",
+        },
+        NewsletterStore: {
+            name: "Subscriber",
+            path: "subscriber",
+            prefix: "newsletter",
         }
     }
 };

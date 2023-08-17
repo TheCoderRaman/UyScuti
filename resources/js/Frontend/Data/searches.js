@@ -4,5 +4,7 @@
  * @var const searches
  */
 export const searches = {
-    //
+    isTyping: false,
+    searchTerm: null,
+    searchForTerm: null,
 };

@@ -101,7 +101,9 @@ class QueueList
      */
     public function getUrl(string $id)
     {
-        $queue = UrlQueueAtlas::where('id',$id)->first();
+        $queue = (UrlQueueAtlas::where(
+            'id',$id)->first()
+        );
         
         return ((null === $queue )
             ? $queue: $queue->url
@@ -129,11 +131,32 @@ class QueueList
      */
     public function getId(string $url)
     {
-        $queue = UrlQueueAtlas::where('url',$url)->first();
+        $queue = (UrlQueueAtlas::where(
+            'url',$url)->first()
+        );
         
         return ((null === $queue )
             ? $queue: $queue->id
         );
+    }
+
+    /**
+     * Get queue from the queue list.
+     * 
+     * @param string $url
+     * @return Queue|bool
+     */
+    public function getQueue(string $url)
+    {
+        $queue = (UrlQueueAtlas::where(
+            'url',$url)->first()
+        );
+
+        if(!$queue){
+            return $queue;
+        }
+
+        return new Queue($queue);
     }
 
     /**

@@ -1,6 +1,7 @@
 {
     "name": "uyscuti",
     "description": "Search Engine using laravel as backend and react as frontend.",
+    "keywords": ["laravel", "framework","search","engine","react","frontend","crawler"],
     "version": "1.0.0",
     "private": true,
     "type": "module",

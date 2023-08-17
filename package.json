@@ -1,4 +1,5 @@
 {
+    "homepage": "/",
     "name": "uyscuti",
     "description": "Search Engine using laravel as backend and react as frontend.",
     "keywords": ["laravel", "framework","search","engine","react","frontend","crawler"],

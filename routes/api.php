@@ -32,5 +32,15 @@ Route::middleware(['api','throttle:60,1'])->group(function () {
         Route::prefix('auth')->group(function () {
             //
         });
+
+        /**
+         * All routes related to uyscuti bot.
+         *
+         * @method POST
+         * @see http://domain.tld/api/v1/bot
+         */
+        Route::prefix('bot')->group(function () {
+            //
+        });
     });
 });

@@ -58,7 +58,7 @@ class UyScutiBot
      * @param QueueList $queueList
      * @return void
      */
-    public function __construct(Crawler $crawler,QueueList $queueList)
+    public function __construct(Crawler $crawler, QueueList $queueList)
     {
         $this->crawler = $crawler;
         $this->queueList = $queueList;
@@ -168,11 +168,15 @@ class UyScutiBot
      */
     protected function initializeCrawler()
     {
-        $this->crawler->setConcurrency(
-            env('CRAWLER_CONCURRENCY',1)
-        )->setUserAgent(
-            env('CRAWLER_NAME','UyScuti').'-Bot'
-        )->setDelayBetweenRequests(150);
+        ($this->crawler
+            ->setConcurrency(
+                env('CRAWLER_CONCURRENCY',1)
+            )->setDelayBetweenRequests(
+                env('CRAWLER_DELAY_BETWEEN_REQUESTS')
+            )->setUserAgent(
+                $site = env('CRAWLER_NAME','UyScuti-Bot')
+            )
+        );
     }
 
     /**

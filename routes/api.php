@@ -62,5 +62,15 @@ Route::middleware(['api','throttle:60,1'])->group(function () {
         Route::prefix('newsletter')->group(function () {
             //
         });
+
+        /**
+         * All routes related to uyscuti search engine.
+         *
+         * @method POST
+         * @see http://domain.tld/api/v1/search
+         */
+        Route::prefix('search')->group(function () {
+            //
+        });
     });
 });

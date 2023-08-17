@@ -60,6 +60,11 @@ export const backendRoutes = {
             name: "Suggest",
             path: "suggest",
             prefix: "search",
+        },
+        SearchRedirect: {
+            name: "Redirect",
+            path: "redirect",
+            prefix: "search",
         }
     }
 };

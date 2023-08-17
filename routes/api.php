@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // Api version v1 controllers
+use App\Http\Controllers\Api\V1\Auth\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +31,24 @@ Route::middleware(['api','throttle:60,1'])->group(function () {
          * @see http://domain.tld/api/v1/auth
          */
         Route::prefix('auth')->group(function () {
-            //
+            (Route::post('/login', [
+                AuthController::class, 'login'])->name('v1#api.auth.login')
+            );
+            (Route::post('/logout', [
+                AuthController::class, 'logout'])->name('v1#api.auth.logout')
+            );
+            (Route::post('/update', [
+                AuthController::class, 'update'])->name('v1#api.auth.update')
+            );
+            (Route::get('/profile', [
+                AuthController::class, 'profile'])->name('v1#api.auth.profile')
+            );
+            (Route::post('/refresh', [
+                AuthController::class, 'refresh'])->name('v1#api.auth.refresh')
+            );
+            (Route::post('/register', [
+                AuthController::class, 'register'])->name('v1#api.auth.register')
+            );
         });
 
         /**

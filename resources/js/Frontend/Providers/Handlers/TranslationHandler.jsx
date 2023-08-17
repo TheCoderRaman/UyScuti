@@ -5,11 +5,11 @@ import React, {
 import { localStorage as ls } from '@/Modules/module';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLaravelReactI18n } from 'laravel-react-i18n';
-import { setLoading, setLocales } from '@/Redux/features/translations/translationsSlice';
+import { setLoading, setAvailableLocales } from '@/Redux/features/translations/translationsSlice';
 
 function TranslationHandler(props) {
     const dispatch = useDispatch();
-    const [availableLocales, setAvailableLocales] = useState([]);
+    const [LocalesAvailable, setLocalesAvailable] = useState([]);
     const { loading, setLocale, getLocales } = useLaravelReactI18n();
     const locale = useSelector((state) => state.translations.value.locale);
 
@@ -25,14 +25,14 @@ function TranslationHandler(props) {
     }, [loading]);
 
     useEffect(() => {
-        ls.set('locales',
-            availableLocales, { encrypt: false }
+        ls.set('availableLocales',
+           LocalesAvailable, { encrypt: false }
         );
-        setLocales(availableLocales);
-    }, [availableLocales])
+        setAvailableLocales(LocalesAvailable);
+    }, [LocalesAvailable])
 
     useEffect(() => {
-        setAvailableLocales(getLocales('en'));
+        setLocalesAvailable(getLocales('en'));
     });
 
     return (

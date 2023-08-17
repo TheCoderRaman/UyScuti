@@ -25,6 +25,11 @@ export const backendRoutes = {
             name: "Update",
             path: "update",
             prefix: "auth",
+        },
+        AuthLogin: {
+            name: "Login",
+            path: "login",
+            prefix: "auth",
         }
     }
 };

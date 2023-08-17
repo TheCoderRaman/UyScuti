@@ -14,3 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/{path?}', 'app');
+
+Route::fallback(function() {
+    return view('app');
+});

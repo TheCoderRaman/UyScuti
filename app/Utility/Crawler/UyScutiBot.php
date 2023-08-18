@@ -8,6 +8,7 @@ use Spatie\Crawler\Crawler;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use App\Utility\Crawler\Queues\Queue;
+use App\Utility\Crawler\Queues\Queues;
 use App\Utility\Crawler\Profiles\Profile;
 use App\Utility\Crawler\Queues\QueueList;
 use App\Utility\Crawler\Observers\Observer;
@@ -222,17 +223,11 @@ class UyScutiBot
      */
     protected function initializeCrawler()
     {
-        ($this->crawler
+        ($this->crawler->setCrawlQueue(app(Queues::class))
             ->setUserAgent(
                 config('uyscuti-bot.name')
             )->setConcurrency(
                 config('uyscuti-bot.concurrency')
-            )->setMaximumDepth(
-                config('uyscuti-bot.maximumDepth')
-            )->setTotalCrawlLimit(
-                config('uyscuti-bot.totalCrawlLimit')
-            )->setCurrentCrawlLimit(
-                config('uyscuti-bot.currentCrawlLimit')
             )->setMaximumResponseSize(
                 config('uyscuti-bot.maximumResponseSize')
             )->setDelayBetweenRequests(

@@ -4,7 +4,6 @@ namespace App\Utility\Crawler\Profiles;
 
 use Psr\Http\Message\UriInterface;
 use App\Utility\Urls\CrawledUrlAtlas;
-use App\Console\Commands\CrawlerCommand;
 use Spatie\Crawler\CrawlProfiles\CrawlAllUrls;
 
 class AllUrlsProfile extends CrawlAllUrls
@@ -17,18 +16,8 @@ class AllUrlsProfile extends CrawlAllUrls
      */
     public function shouldCrawl(UriInterface $url): bool
     {
-        if(!app(CrawledUrlAtlas::class)->isExists($url)){
-            return true;
-        }
-
-        if(app()->runningInConsole()){
-            app(CrawlerCommand::class)->question(
-                sprintf("%s: Already Crawled Url [%s]",
-                    substr(strrchr(get_class($this), '\\'), 1), $url
-                )
-            );
-        }
-
-        return false;
+        return !(app(
+            CrawledUrlAtlas::class)->isExists($url)
+        );
     }
 }

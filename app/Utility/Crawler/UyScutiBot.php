@@ -227,6 +227,8 @@ class UyScutiBot
                 config('uyscuti-bot.name')
             )->setConcurrency(
                 config('uyscuti-bot.concurrency')
+            )->setMaximumDepth(
+                config('uyscuti-bot.maximumDepth')
             )->setTotalCrawlLimit(
                 config('uyscuti-bot.totalCrawlLimit')
             )->setCurrentCrawlLimit(

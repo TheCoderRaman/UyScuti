@@ -227,6 +227,8 @@ class UyScutiBot
                 config('uyscuti-bot.name')
             )->setConcurrency(
                 config('uyscuti-bot.concurrency')
+            )->setMaximumResponseSize(
+                config('uyscuti-bot.maximumResponseSize')
             )->setDelayBetweenRequests(
                 config('uyscuti-bot.delayBetweenRequests')
             )

@@ -53,4 +53,17 @@ return [
      | Tip: set it null to crawl all urls
      */
     'totalCrawlLimit' => env('CRAWLER_TOTAL_CRAWL_LIMIT',null),
+
+    /*
+     | --------------------------------------------------------------------------
+     | Current Crawl Limit
+     | --------------------------------------------------------------------------
+     | You can tell the crawler how many urls to crawl per execution.
+     |
+     | This option control how many urls to crawled per execution during crawling.
+     | you may specify any number here.
+     |
+     | Tip: set it null to crawl all urls
+     */
+    'currentCrawlLimit' => env('CRAWLER_CURRENT_CRAWL_LIMIT',null),
 ];

@@ -27,4 +27,17 @@ return [
      | Tip: improve the speed of the crawl
      */
     'concurrency' => env('CRAWLER_CONCURRENCY',10),
+
+    /*
+     | --------------------------------------------------------------------------
+     | Delay between requests
+     | --------------------------------------------------------------------------
+     | You can tell the crawler how much time to wait between each request.
+     |
+     | This option control the delay between each requests made by crawler.
+     | you may specify any number here in milliseconds.
+     |
+     | Tip: prevent rate-limit when crawling too aggressively
+     */
+    'delayBetweenRequests' => env('CRAWLER_DELAY_BETWEEN_REQUESTS',150),
 ];

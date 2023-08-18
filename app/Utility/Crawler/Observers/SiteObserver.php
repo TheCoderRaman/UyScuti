@@ -11,14 +11,13 @@ use Psr\Http\Message\UriInterface;
 use App\Utility\Urls\CrawledUrlAtlas;
 use App\Utility\Crawler\MetaTagParser;
 use Psr\Http\Message\ResponseInterface;
-use App\Console\Commands\CrawlerCommand;
 use App\Utility\Crawler\Observers\Observer;
 
 final class SiteObserver extends Observer
 {
     /**
      * Called when the crawler has crawled the given url successfully.
-     * 
+     *
      * @param UriInterface $url
      * @param ResponseInterface $response
      * @param ?UriInterface $foundOnUrl
@@ -29,25 +28,13 @@ final class SiteObserver extends Observer
         UriInterface $url,
         ResponseInterface $response,
         ?UriInterface $foundOnUrl = null,
-        ?string $linkText  = null
+        ?string $linkText = null
     ): void {
         $headers = $response->getHeaders();
         
         if(!$this->isSupported(
             $url,$headers,['site']
         )){
-            return;
-        }
-
-        if(app(CrawledUrlAtlas::class)->isExists($url)){
-            if(!app()->runningInConsole()){
-                return;
-            }
-
-            app(CrawlerCommand::class)->question(
-                sprintf("Already Crawled: %s",$url)
-            );
-            app(CrawlerCommand::class)->line("\n");
             return;
         }
 
@@ -66,7 +53,7 @@ final class SiteObserver extends Observer
                     )->toArray()
                 )
             ],$MetaTags
-            ))->devices(!$viewport 
+            ))->devices(!$viewport
                 ? ['window','mac','linux','chromeos']
                 : ['window','mac','linux','android','chromeos']
             )->data('modified_at',Arr::get(

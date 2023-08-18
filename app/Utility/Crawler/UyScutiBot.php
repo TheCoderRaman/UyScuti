@@ -8,6 +8,7 @@ use Spatie\Crawler\Crawler;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use App\Utility\Crawler\Queues\Queue;
+use App\Utility\Crawler\Profiles\Profile;
 use App\Utility\Crawler\Queues\QueueList;
 use App\Utility\Crawler\Observers\Observer;
 use App\Utility\Crawler\Sniffer\TypeSniffer;
@@ -168,7 +169,7 @@ class UyScutiBot
      */
     protected function initializeCrawler()
     {
-        ($this->crawler
+        ($this->crawler->setCrawlProfile(app(Profile::class))
             ->setConcurrency(
                 env('CRAWLER_CONCURRENCY',1)
             )->setDelayBetweenRequests(

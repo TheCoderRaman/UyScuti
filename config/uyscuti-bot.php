@@ -66,4 +66,17 @@ return [
      | Tip: set it null to crawl all urls
      */
     'currentCrawlLimit' => env('CRAWLER_CURRENT_CRAWL_LIMIT',null),
+
+    /*
+     | --------------------------------------------------------------------------
+     | Maximum Crawl Depth
+     | --------------------------------------------------------------------------
+     | You can tell the crawler the maximum depth of the crawling.
+     |
+     | This option control the maximum depth limit of the crawler during crawling.
+     | you may specify any number here.
+     |
+     | Tip: set it null to crawl all urls
+     */
+    'maximumDepth' => env('CRAWLER_MAXIMUM_DEPTH',null),
 ];

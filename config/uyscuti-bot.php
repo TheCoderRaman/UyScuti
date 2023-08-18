@@ -79,4 +79,17 @@ return [
      | Tip: set it null to crawl all urls
      */
     'maximumDepth' => env('CRAWLER_MAXIMUM_DEPTH',null),
+
+    /*
+     | --------------------------------------------------------------------------
+     | Maximum Response Size
+     | --------------------------------------------------------------------------
+     | You can tell the crawler the maximum size of the response.
+     |
+     | This option control the maximum reponse size of the request during crawling.
+     | you may specify any number here in bytes.
+     |
+     | Tip: default is 2 mb that is (1024 * 1024 * 2) in bytes
+     */
+    'maximumResponseSize' => env('CRAWLER_MAXIMUM_RESPONSE_SIZE',1024 * 1024 * 3),
 ];

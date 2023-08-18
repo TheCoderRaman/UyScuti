@@ -224,9 +224,9 @@ class UyScutiBot
     {
         ($this->crawler
             ->setConcurrency(
-                env('CRAWLER_CONCURRENCY',1)
+                config('uyscuti-bot.concurrency',1)
             )->setDelayBetweenRequests(
-                env('CRAWLER_DELAY_BETWEEN_REQUESTS')
+                config('uyscuti-bot.delayBetweenRequests')
             )->setUserAgent(
                 $site = env('CRAWLER_NAME','UyScuti-Bot')
             )

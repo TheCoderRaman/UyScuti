@@ -223,12 +223,12 @@ class UyScutiBot
     protected function initializeCrawler()
     {
         ($this->crawler
-            ->setConcurrency(
-                config('uyscuti-bot.concurrency',1)
+            ->setUserAgent(
+                config('uyscuti-bot.name')
+            )->setConcurrency(
+                config('uyscuti-bot.concurrency')
             )->setDelayBetweenRequests(
                 config('uyscuti-bot.delayBetweenRequests')
-            )->setUserAgent(
-                $site = env('CRAWLER_NAME','UyScuti-Bot')
             )
         );
     }

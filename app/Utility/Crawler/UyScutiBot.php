@@ -69,6 +69,13 @@ class UyScutiBot
     ];
 
     /**
+     * Index for currently crawling urls.
+     *
+     * @var array $crawlingUrls
+     */
+    public static $crawlingUrls = [];
+
+    /**
      * UyScuti bot constructor.
      *
      * @param Crawler $crawler

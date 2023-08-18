@@ -223,6 +223,18 @@ class UyScutiBot
      */
     protected function initializeCrawler()
     {
+        (collect([
+            'setMaximumDepth' => 'maximumDepth',
+            'setTotalCrawlLimit' => 'totalCrawlLimit',
+            'setCurrentCrawlLimit' => 'currentCrawlLimit'
+        ])->map(
+            fn($key) => config("uyscuti-bot.{$key}")
+        )->filter(fn($value) => null !== $value)
+            ->map(function ($value, $method) {
+                  $this->crawler->{$method}($value);
+            })
+        );
+        
         ($this->crawler->setCrawlQueue(app(Queues::class))
             ->setUserAgent(
                 config('uyscuti-bot.name')

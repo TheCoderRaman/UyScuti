@@ -4,6 +4,18 @@ return [
 
     /*
      | --------------------------------------------------------------------------
+     | Crawler Name
+     | --------------------------------------------------------------------------
+     | You can tell the crawler its name which will be used as user agent.
+     |
+     | This option control the user agent that will be used during requests.
+     |
+     | tip: provide anything you want!
+     */
+    'name' => env('CRAWLER_NAME','UyScuti-Bot'),
+
+    /*
+     | --------------------------------------------------------------------------
      | Crawl Profile
      | --------------------------------------------------------------------------
      | You can tell the crawler not to visit certain urls by using the profile.

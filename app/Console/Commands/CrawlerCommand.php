@@ -11,7 +11,7 @@ class CrawlerCommand extends Command
 {
     /**
      * UyScuti bot for crawling urls.
-     * 
+     *
      * @var UyScutiBot
      */
     protected UyScutiBot $bot;
@@ -22,7 +22,7 @@ class CrawlerCommand extends Command
      * @var string
      */
     protected $signature = 'app:crawler {
-        {--url= : Crawl the given url}
+        --url= : Crawl the given url
     }';
 
     /**
@@ -34,7 +34,7 @@ class CrawlerCommand extends Command
 
     /**
      * Crawler command constructor.
-     * 
+     *
      * @param ConsoleOutput $output
      * @param UyScutiBot $bot
      * @return void
@@ -53,7 +53,7 @@ class CrawlerCommand extends Command
 
     /**
      * Execute the console command.
-     * 
+     *
      * @return void
      */
     public function handle()
@@ -81,7 +81,7 @@ class CrawlerCommand extends Command
     protected function getOptions()
     {
         return [
-            ['url', 'u', InputOption::VALUE_OPTIONAL, 'Url to be crawled by the bot','sad'],
+            ['url', 'u', InputOption::VALUE_OPTIONAL, 'Url to be crawled by the bot',null],
         ];
-    }    
+    }
 }

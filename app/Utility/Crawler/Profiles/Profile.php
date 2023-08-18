@@ -23,10 +23,10 @@ class Profile extends CrawlProfile
 
         if(app()->runningInConsole()){
             app(CrawlerCommand::class)->question(
-                sprintf("Already Crawled: %s",$url)
+                sprintf("%s: Already Crawled Url [%s]",
+                    substr(strrchr(get_class($this), '\\'), 1), $url
+                )
             );
-    
-            app(CrawlerCommand::class)->line("\n");
         }
 
         return false;

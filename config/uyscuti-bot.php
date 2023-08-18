@@ -40,4 +40,17 @@ return [
      | Tip: prevent rate-limit when crawling too aggressively
      */
     'delayBetweenRequests' => env('CRAWLER_DELAY_BETWEEN_REQUESTS',150),
+
+    /*
+     | --------------------------------------------------------------------------
+     | Total Crawl Limit
+     | --------------------------------------------------------------------------
+     | You can tell the crawler total number of urls to crawl.
+     |
+     | This option control the total number of urls to crawl during crawling.
+     | you may specify any number here.
+     |
+     | Tip: set it null to crawl all urls
+     */
+    'totalCrawlLimit' => env('CRAWLER_TOTAL_CRAWL_LIMIT',null),
 ];

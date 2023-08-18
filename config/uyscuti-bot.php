@@ -13,5 +13,5 @@ return [
      |
      | Supported: "profile", "allUrls", "subdomains", "internalUrls"
      */
-    'profile' => 'subdomainsProfile'
+    'profile' => 'subdomains'
 ];

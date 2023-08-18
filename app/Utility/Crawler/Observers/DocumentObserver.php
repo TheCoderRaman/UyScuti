@@ -9,14 +9,13 @@ use Illuminate\Support\Facades\DB;
 use Psr\Http\Message\UriInterface;
 use App\Utility\Urls\CrawledUrlAtlas;
 use Psr\Http\Message\ResponseInterface;
-use App\Console\Commands\CrawlerCommand;
 use App\Utility\Crawler\Observers\Observer;
 
 final class DocumentObserver extends Observer
 {
     /**
      * Called when the crawler has crawled the given url successfully.
-     * 
+     *
      * @param UriInterface $url
      * @param ResponseInterface $response
      * @param ?UriInterface $foundOnUrl
@@ -27,25 +26,13 @@ final class DocumentObserver extends Observer
         UriInterface $url,
         ResponseInterface $response,
         ?UriInterface $foundOnUrl = null,
-        ?string $linkText  = null
+        ?string $linkText = null
     ): void {
         $headers = $response->getHeaders();
         
         if(!$this->isSupported(
             $url,$headers,['document']
         )){
-            return;
-        }
-
-        if(app(CrawledUrlAtlas::class)->isExists($url)){
-            if(!app()->runningInConsole()){
-                return;
-            }
-
-            app(CrawlerCommand::class)->question(
-                sprintf("Already Crawled: %s",$url)
-            );
-            app(CrawlerCommand::class)->line("\n");
             return;
         }
 

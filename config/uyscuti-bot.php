@@ -13,7 +13,7 @@ return [
      |
      | Supported: "profile", "allUrls", "subdomains", "internalUrls"
      */
-    'profile' => 'subdomains',
+    'profile' => env('CRAWLER_PROFILE','subdomains'),
 
     /*
      | --------------------------------------------------------------------------
@@ -26,5 +26,5 @@ return [
      |
      | Tip: improve the speed of the crawl
      */
-    'concurrency' => 10,
+    'concurrency' => env('CRAWLER_CONCURRENCY',10),
 ];

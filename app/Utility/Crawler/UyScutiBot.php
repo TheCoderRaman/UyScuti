@@ -12,37 +12,53 @@ use App\Utility\Crawler\Profiles\Profile;
 use App\Utility\Crawler\Queues\QueueList;
 use App\Utility\Crawler\Observers\Observer;
 use App\Utility\Crawler\Sniffer\TypeSniffer;
+use Spatie\Crawler\CrawlProfiles\CrawlProfile;
 use App\Utility\Crawler\Observers\SiteObserver;
 use App\Utility\Crawler\Observers\ImageObserver;
 use App\Utility\Crawler\Observers\VideoObserver;
+use App\Utility\Crawler\Profiles\AllUrlsProfile;
 use App\Utility\Crawler\Observers\DocumentObserver;
+use App\Utility\Crawler\Profiles\SubdomainsProfile;
+use App\Utility\Crawler\Profiles\InternalUrlsProfile;
 
 class UyScutiBot
 {
     /**
      * Crawler instance.
-     * 
+     *
      * @var Crawler
      */
     protected Crawler $crawler;
 
     /**
      * Type sniffer instance.
-     * 
+     *
      * @var TypeSniffer
      */
     public static $typeSniffer;
 
     /**
      * Url queue list instance.
-     * 
+     *
      * @var QueueList
      */
     protected QueueList $queueList;
 
     /**
+     * Crawl profiles for filtering certain urls.
+     *
+     * @var CrawlProfile[]
+     */
+    protected $profiles = [
+        Profile::class,
+        AllUrlsProfile::class,
+        SubdomainsProfile::class,
+        InternalUrlsProfile::class
+    ];
+
+    /**
      * Crawl observers to observe different kind of content.
-     * 
+     *
      * @var Observer[]
      */
     protected $observers = [
@@ -54,7 +70,7 @@ class UyScutiBot
 
     /**
      * UyScuti bot constructor.
-     * 
+     *
      * @param Crawler $crawler
      * @param QueueList $queueList
      * @return void
@@ -72,7 +88,7 @@ class UyScutiBot
 
     /**
      * Register your own crawl observer.
-     * 
+     *
      * @param Observer|string $observer
      * @return void
      */
@@ -91,7 +107,7 @@ class UyScutiBot
 
     /**
      * Crawl either from given url or from url queues list.
-     * 
+     *
      * @param string|null $url
      * @return void
      */
@@ -114,7 +130,7 @@ class UyScutiBot
 
     /**
      * Initial uyscuti bot and start crawling pages.
-     * 
+     *
      * @param array $urls
      * @return void
      */
@@ -133,7 +149,7 @@ class UyScutiBot
 
     /**
      * Start crawler bot.
-     * 
+     *
      * @param string[] $urls
      * @return void
      */
@@ -146,8 +162,8 @@ class UyScutiBot
                 )
             ))->map(function ($url) {
                 try {
-                    ($this->crawler
-                        ->startCrawling($url)
+                    ($this->crawler->setCrawlProfile(
+                        $this->getCrawlProfile($url))->startCrawling($url)
                     );
 
                     $this->queueList->crawled($url);
@@ -163,13 +179,43 @@ class UyScutiBot
     }
 
     /**
+     * Get crawling profile.
+     *
+     * @param string $url
+     * @return CrawlProfile
+     */
+    protected function getCrawlProfile(string $url)
+    {
+        $profile = config('uyscuti-bot.profile');
+
+        return collect($this->profiles)->map(
+            function($profileClass) use($profile, $url)
+            {
+                $profileName = lcfirst(substr(
+                    strrchr($profileClass, '\\'), 1
+                ));
+
+                $profileName = str_replace(
+                    'Profile','',$profileName
+                );
+
+                if(strcmp($profileName,$profile) != 0){
+                    return false;
+                }
+
+                return app($profileClass,[ 'baseUrl' => $url ]);
+            }
+        )->filter(fn($value) => false !== $value)->first();
+    }
+
+    /**
      * Initialize crawl.
-     * 
+     *
      * @return void
      */
     protected function initializeCrawler()
     {
-        ($this->crawler->setCrawlProfile(app(Profile::class))
+        ($this->crawler
             ->setConcurrency(
                 env('CRAWLER_CONCURRENCY',1)
             )->setDelayBetweenRequests(
@@ -182,7 +228,7 @@ class UyScutiBot
 
     /**
      * Register core crawl observers.
-     * 
+     *
      * @return void
      */
     protected function registerCoreObservers(): void

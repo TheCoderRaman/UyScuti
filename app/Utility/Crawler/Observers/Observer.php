@@ -25,6 +25,12 @@ abstract class Observer extends CrawlObserver
         UriInterface $url, 
         ?string $linkText
     ): void {
+        if(in_array($url, UyScutiBot::$crawlingUrls)){
+            return;
+        }
+
+        array_push(UyScutiBot::$crawlingUrls,$url);
+        
         if(!app()->hasDebugModeEnabled()){
             return;
         }
@@ -45,6 +51,8 @@ abstract class Observer extends CrawlObserver
      */
     public function finishedCrawling(): void
     {
+        array_pop(UyScutiBot::$crawlingUrls,$url);
+
         if(!app()->hasDebugModeEnabled()){
             return;
         }
@@ -74,6 +82,8 @@ abstract class Observer extends CrawlObserver
         ?string $linkText = null
     ): void {
         DB::rollBack();
+
+        array_pop(UyScutiBot::$crawlingUrls,$url);
 
         if(!app(CrawledUrlAtlas::class)->isExists($url)){
             app(CrawledUrlAtlas::class)->crawled("",'failed',$url);

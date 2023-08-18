@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\DB;
 use Psr\Http\Message\UriInterface;
 use App\Utility\Urls\CrawledUrlAtlas;
 use Psr\Http\Message\ResponseInterface;
-use App\Console\Commands\CrawlerCommand;
 use App\Utility\Crawler\Observers\Observer;
 
 final class VideoObserver extends Observer
@@ -27,25 +26,13 @@ final class VideoObserver extends Observer
         UriInterface $url,
         ResponseInterface $response,
         ?UriInterface $foundOnUrl = null,
-        ?string $linkText  = null
+        ?string $linkText = null
     ): void {
         $headers = $response->getHeaders();
         
         if(!$this->isSupported(
             $url,$headers,['video']
         )){
-            return;
-        }
-
-        if(app(CrawledUrlAtlas::class)->isExists($url)){
-            if(!app()->runningInConsole()){
-                return;
-            }
-
-            app(CrawlerCommand::class)->question(
-                sprintf("Already Crawled: %s",$url)
-            );
-            app(CrawlerCommand::class)->line("\n");
             return;
         }
 

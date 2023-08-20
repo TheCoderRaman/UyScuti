@@ -12,11 +12,12 @@ function Status({
         <div className='text-gray-500 dark:text-gray-400 w-[100vw] sm:w-full'>
             {code !== 404 ? (
                 <>
-                    <div className='text-6xl pb-5'>
-                        <b>{t(`${code}`)}</b>
+                    <div className='text-4xl pb-5'>
+                        <b>{t(`${code}`)} {' '}</b>
                     </div>
+                    {t('frontend.That\'s an error.')}
                     <p>
-                        <div className='text-4xl'>
+                        <div className='text-2xl'>
                             {t(`api.${code}`)}
                         </div>
                     </p>

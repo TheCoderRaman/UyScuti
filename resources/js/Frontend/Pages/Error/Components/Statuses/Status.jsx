@@ -9,7 +9,7 @@ function Status({
     const { t } = useLaravelReactI18n();
 
     return (
-        <div className='text-gray-500 dark:text-gray-400'>
+        <div className='text-gray-500 dark:text-gray-400 w-[100vw] sm:w-full'>
             {code !== 404 ? (
                 <>
                     <div className='text-6xl pb-5'>

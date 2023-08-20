@@ -14,6 +14,8 @@ function MaximalLayout(props) {
             {/* Header Section */}
             <Header />
 
+            <div className='h-[10vh] sm:h-10'></div>
+
             {/* Main Section */}
             <main className="main-layout flex flex-col">
                 {props.children}

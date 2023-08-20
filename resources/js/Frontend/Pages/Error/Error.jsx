@@ -39,7 +39,7 @@ function Error() {
             onClick={() => navigate(route('Home'))}
             className='ml-[-50%] pb-[5%] cursor-pointer'
           >
-            <MainLogo className='ml-[-5%] w-[30%]' />
+            <MainLogo className='ml-[-5%] w-[30%] sm:w-[60%]' />
           </div>
 
           <Status code={code} />

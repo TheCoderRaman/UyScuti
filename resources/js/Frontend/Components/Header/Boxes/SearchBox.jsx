@@ -111,13 +111,18 @@ function SearchBox() {
                         {register("searchTerm", { required: true }) && ''}
                         <input
                             type="text"
+                            style={{
+                                width: '80vw',
+                                maxWidth: '600px',
+                                minWidth: '300px',
+                            }}
                             onBlur={handleOnBlur}
                             onFocus={handleOnFocus}
                             onChange={handleTyping}
                             onKeyDown={handleKeyDown}
                             value={searches.searchTerm ?? ''}
                             placeholder={t('frontend.Rocks are space, and space is illusion')}
-                            className="bg-[#f8f9fa] dark:bg-[#303134] rounded-t-2xl rounded-r-2xl rounded-bl-2xl rounded-br-2xl focus:rounded-br-none focus:rounded-bl-none h-[45px] w-[600px] hover:shadow-md placeholder:italic dark:text-white placeholder:text-slate-400 block border border-slate-300 dark:border-[#5f6368] py-2 pl-12 pr-3 shadow-sm focus:outline-none focus:border-sky-300 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+                            className="bg-[#f8f9fa] dark:bg-[#303134] rounded-t-2xl rounded-r-2xl rounded-bl-2xl rounded-br-2xl focus:rounded-br-none focus:rounded-bl-none h-[45px] hover:shadow-md placeholder:italic dark:text-white placeholder:text-slate-400 block border border-slate-300 dark:border-[#5f6368] py-2 pl-12 pr-3 shadow-sm focus:outline-none focus:border-sky-300 focus:ring-sky-500 focus:ring-1 sm:text-sm"
                         ></input>
 
                         <button
@@ -129,7 +134,7 @@ function SearchBox() {
 
                     <div className='flex'>
                         {!isEmpty(searches.searchTerm) && (
-                            <button onClick={handleClear} className="absolute top-[25%] left-[90%]">
+                            <button onClick={handleClear} className="absolute top-[25%] right-[5%] pr-3">
                                 <span className="text-[#9aa0a6] dark:text-[#DDDDDD]">
                                     <ClearIcon title={t('frontend.Clear')} />
                                 </span>
@@ -138,7 +143,7 @@ function SearchBox() {
 
                         <button
                             type="submit"
-                            className="absolute top-[25%] left-[95%]"
+                            className="absolute top-[25%] right-[1%]"
                             onClick={handleSearchSubmit}
                         >
                             <span className="text-[#9aa0a6] dark:text-[#DDDDDD]">

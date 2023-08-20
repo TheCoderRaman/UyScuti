@@ -27,7 +27,7 @@ function Error() {
     );
 
     setCode(pattern.match(
-      pathname)['code'] ?? statusCode
+      pathname)?.code ?? statusCode
     );
   }, []);
 

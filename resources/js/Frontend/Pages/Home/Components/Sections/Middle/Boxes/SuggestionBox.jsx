@@ -66,7 +66,14 @@ function SuggestionBox() {
 
     return (searches.isTyping &&
         <div className="grid place-items-center left-0 right-0 py-2 ml-[auto] mr-[auto] mt-[-85px] z-0 h-[200px]">
-            <div className="bg-[#fff] dark:bg-[#303134] rounded-bl rounded-br divide-y divide-gray-100 shadow w-[602px]">
+            <div 
+                style={{
+                    width: '80vw',
+                    maxWidth: '602px',
+                    minWidth: '300px',
+                }}
+                className="bg-[#fff] dark:bg-[#303134] rounded-bl rounded-br divide-y divide-gray-100 shadow"
+            >
                 <div className="border-t-[1px] border-solid bg-[#e8eaed] dark:border-[#5f6368]"></div>
                 {suggestions.length <= 0 ? (
                     <div className="py-2 text-gray-700 dark:text-gray-200 h-[200px]">

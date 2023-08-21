@@ -67,7 +67,7 @@ function Header() {
                         }}
                         className="flex justify-between w-full"
                     >
-                        {route('Search') === pathname && (
+                        {route('Search') !== pathname ? <div></div> :(
                             <div className="max-w-full">
                                 <div
                                     onClick={() => navigate(route('Home'))}

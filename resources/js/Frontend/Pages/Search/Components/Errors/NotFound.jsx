@@ -13,7 +13,7 @@ function NotFound() {
       className="p-5"
     >
       <div
-        className="flex gap-5 rounded-t-3xl rounded-r-3xl rounded-bl-3xl rounded-br-3xl border-2 border-[#f1f3f4] dark:border-[#3c4043] dark:bg-[#3c4043] bg-[#e9f5ff] p-5"
+        className="flex flex-col md:flex-row gap-5 rounded-t-3xl rounded-r-3xl rounded-bl-3xl rounded-br-3xl border-2 border-[#f1f3f4] dark:border-[#3c4043] dark:bg-[#3c4043] bg-[#e9f5ff] p-5"
       >
         <MainLogo className="cursor-pointer" onClick={() => {navigate(route('Home'))}} />
         <div className='flex flex-col text-gray-700 dark:text-gray-200'>

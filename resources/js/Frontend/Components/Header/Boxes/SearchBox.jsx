@@ -4,7 +4,7 @@ import React, {
 } from 'react';
 
 import { isEmpty } from '@/Utils/util';
-import { useForm } from "react-hook-form";
+import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 import { frontendRoute } from '@/Utils/util';
 import { useDispatch, useSelector } from 'react-redux';

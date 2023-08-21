@@ -58,7 +58,7 @@ function Pagination(props) {
                         )}
 
                         {paginate.data.last_page > 2 && (
-                            <nav className="px-1" aria-label="Page navigation example">
+                            <nav className="px-1 hidden md:block">
                                 <ul className="flex items-center -space-x-px h-10 text-base">
                                     {!isEmpty(paginate.data.links) && (
                                         paginate.data.links.map((value, index) => {

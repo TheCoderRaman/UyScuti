@@ -32,7 +32,7 @@ function DocumentLabel(props) {
   }, [paginate.axios.data]);
 
   return (isEmpty(result) ? <NotFound /> : !isEmpty(result.filter((value) => !isEmpty(value))) &&
-    <div className="flex">
+    <div className="flex flex-col md:flex-row p-5 md:p-0">
       <div className="flex-none w-[10%] h-auto"></div>
 
       <div className="flex-1">
@@ -45,7 +45,6 @@ function DocumentLabel(props) {
                 new Date(paginate.data.duration.initialTime)
               ) / 1000
             })}
-            {/* Todo: Format result and secons */}
           </div>
         )}
 

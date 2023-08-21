@@ -49,7 +49,7 @@ function SiteLabel(props) {
             )}
 
             {result.map((value, index) => {if(isEmpty(value)) return; const { root_url, sub_url, redirect } = value; return (
-            <div key={`${index}:${root_url.id}-${sub_url.id}`} className="rounded-xl hover:dark:bg-[#3c4043] hover:bg-[#e9f5ff] p-5 mt-[5%]">
+            <div key={`${index}:${root_url.id}-${sub_url.id}`} className="rounded-xl dark:bg-[#222327] bg-[#f3f7ff] hover:dark:bg-[#3c4043] hover:bg-[#e9f5ff] p-5 mt-[5%]">
                 <div className="flex gap-[20px]">
                     <div className="flex gap-[20px]">
                         <div className="min-w-[40px] max-w-[30px] min-h-[47px] max-h-[47px] rounded-full ring-2 ring-gray-300 dark:ring-gray-500 cursor-pointer">

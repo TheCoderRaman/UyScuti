@@ -46,7 +46,7 @@ function Search() {
   },[axios.context]);
 
   return (
-    <section className="relative overflow-hidden pt-[30px] pb-16 md:pb-[120px] xl:pb-[160px] 2xl:pt-[210px] 2xl:pb-[200px] min-h-[100vh]">
+    <section className="relative overflow-hidden pt-[30px] pb-16 md:pb-[120px] xl:pb-[160px] 2xl:pt-[210px] 2xl:pb-[200px] min-h-[100vh] min-w-[350px] w-[100vw]">
       <div className='grid place-items-center md:hidden'>
         <Header />
       </div>
@@ -69,10 +69,12 @@ function Search() {
               )
             })}
           </div>
+
           <div className='flex space-x-4'>
             {/* Setting Can Be Added Here */}
           </div>
         </div>
+
         <div className='flex space-x-4'>
           {/* Safe Search Filter Can Be Added Here */}
           {/* With Options Like: [mean => mean,median => moderate,mode => Strict] options */}

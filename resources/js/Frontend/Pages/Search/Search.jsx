@@ -7,6 +7,7 @@ import { backendRoute } from '@/Utils/util';
 import { useAxios } from '@/Hooks/hooks.jsx';
 import { useHorizontalScroll } from '@/Hooks/hooks.jsx';
 import Label from '@/Pages/Search/Components/Labels/Label.jsx';
+import Header from '@/Pages/Search/Components/Header/Header.jsx';
 
 function Search() {
   const axios = useAxios();
@@ -45,7 +46,11 @@ function Search() {
   },[axios.context]);
 
   return (
-    <section className="relative z-10 overflow-hidden pt-[30px] pb-16 md:pt-[70px] md:pb-[120px] xl:pt-[70px] xl:pb-[160px] 2xl:pt-[210px] 2xl:pb-[200px] min-h-[100vh]">
+    <section className="relative overflow-hidden pt-[30px] pb-16 md:pb-[120px] xl:pb-[160px] 2xl:pt-[210px] 2xl:pb-[200px] min-h-[100vh]">
+      <div className='grid place-items-center md:hidden'>
+        <Header />
+      </div>
+
       <div className='flex sm:justify-around justify-between items-center h-[70px] px-5 text-[#3c4043] dark:text-[#f1f3f4] overflow-x-auto hover:scroll-auto hide-scrollbar'>
         <div className='flex space-x-4'>
           <div ref={scrollRef} className='flex flex-1 space-x-2 justify-center uppercase'>

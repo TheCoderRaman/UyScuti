@@ -7,6 +7,7 @@ import { isEmpty } from '@/Utils/util';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 import { frontendRoute } from '@/Utils/util';
+import GlobeIcon from '@/Components/Icons/GlobeIcon';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLaravelReactI18n } from 'laravel-react-i18n';
 import ClearIcon from '@/Components/Icons/ClearIcon.jsx';
@@ -101,9 +102,13 @@ function SearchBox() {
         <>
             <div className="flex flex-grow">
                 <label className="relative">
-                    {!isEmpty(searches.searchTerm) && (
+                    {!isEmpty(searches.searchTerm) ? (
                         <span className="pl-3 pt-3 text-[#9aa0a6] dark:text-[#DDDDDD] absolute">
                             <SearchIcon title={t('frontend.Search')} />
+                        </span>
+                    ) : (
+                        <span className="pl-3 pt-3 text-[#9aa0a6] dark:text-[#DDDDDD] absolute">
+                            <GlobeIcon />
                         </span>
                     )}
 

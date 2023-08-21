@@ -81,6 +81,18 @@ function ImageLabel(props) {
 
   return (isEmpty(result) ? <NotFound /> : !isEmpty(result.filter((value) => !isEmpty(value))) &&
     <div className='p-10'>
+      {!isEmpty(result) && (
+        <div className='text-slate-500 dark:text-slate-100 pb-10'>
+          {t(`About :results results (:seconds seconds)`,{
+            results: paginate.data.total,
+            seconds: (
+              new Date(paginate.data.duration.finalTime) -
+              new Date(paginate.data.duration.initialTime)
+            ) / 1000
+          })}
+        </div>
+      )}
+
       <PhotoAlbum
         layout="rows"
         photos={getImages()}
@@ -95,7 +107,7 @@ function ImageLabel(props) {
         slides={getImages()}
         close={() => setIndex(-1)}
         counter={{ container: { style: { top: "unset", bottom: '20px' } } }}
-        plugins={[Fullscreen, Slideshow, Zoom, Captions,Counter,Download,Share,Video]}
+        plugins={[Fullscreen, Slideshow, Zoom, Captions, Counter, Download, Share, Video]}
         on={{
           click: () => {
             (captionsRef.current?.visible ? captionsRef.current?.hide : captionsRef.current?.show)?.();

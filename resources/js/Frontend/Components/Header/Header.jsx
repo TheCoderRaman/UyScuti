@@ -73,7 +73,7 @@ function Header() {
                                     onClick={() => navigate(route('Home'))}
                                     className='header-logo block w-full cursor-pointer md:hidden'
                                 >
-                                    <MainLogo className='w-[150px] h-[50px]' decoding="async" data-nimg="1" loading="lazy" style={{ color: 'transparent' }} />
+                                    <MainLogo className='w-[150px] h-[50px] pl-5 md:p-0' decoding="async" data-nimg="1" loading="lazy" style={{ color: 'transparent' }} />
                                 </div>
                                 
                                 <div className='p-3 m-0 hidden md:block'>

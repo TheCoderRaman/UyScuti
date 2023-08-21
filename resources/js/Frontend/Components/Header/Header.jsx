@@ -108,38 +108,6 @@ function Header() {
                             </div>
                         </div>
                     </div>
-
-                    {/* <div className="flex w-full items-center justify-between px-4">
-                        <div className='p-0 m-0'>
-                            {route('Search') === pathname && (
-                                <>
-                                    <SearchBox />
-                                    <SuggestionBox />
-                                </>
-                            )}
-                        </div>
-                        <div className="flex items-center justify-end mr-[-7%]">
-                            {authentications.isLogged ? (
-                                <div 
-                                    onClick={() => {navigate(route('Profile'))}}
-                                    className='rounded-full ring-2 ring-gray-300 dark:ring-gray-500 cursor-pointer' 
-                                >
-                                    <img className="w-10 h-10 p-1" src={authentications.user?.avatar} alt={authentications.user?.name} />
-                                </div>
-                            ) : (
-                                <button
-                                    type="button"
-                                    onClick={() => {navigate(route('SignIn'))}}
-                                    className="ease-in-up hidden rounded-md py-3 px-1 text-base font-bold text-white transition duration-300 hover:bg-opacity-90 hover:shadow-signUp md:block md:px-9 lg:px-6 xl:px-9 bg-slate-700 hover:bg-slate-500"
-                                >
-                                    {t('frontend.Sign In')}
-                                </button>
-                            )}
-                            <div>
-                                <ThemeSwitch />
-                            </div>
-                        </div>
-                    </div> */}
                 </div>
             </div>
         </header>

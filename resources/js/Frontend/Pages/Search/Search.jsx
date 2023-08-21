@@ -46,9 +46,9 @@ function Search() {
 
   return (
     <section className="relative z-10 overflow-hidden pb-16 md:pt-[70px] md:pb-[120px] xl:pt-[70px] xl:pb-[160px] 2xl:pt-[210px] 2xl:pb-[200px] min-h-[100vh]">
-      <div className='flex sm:justify-around justify-between items-center h-[70px] pl-10 pr-10 text-[#3c4043] dark:text-[#f1f3f4]'>
+      <div className='flex sm:justify-around justify-between items-center h-[70px] px-5 text-[#3c4043] dark:text-[#f1f3f4] overflow-x-auto hover:scroll-auto hide-scrollbar'>
         <div className='flex space-x-4'>
-          <div ref={scrollRef} className='flex flex-1 space-x-2 justify-center uppercase overflow-x-auto w-[600px] ml-[-25%] hover:scroll-auto hide-scrollbar'>
+          <div ref={scrollRef} className='flex flex-1 space-x-2 justify-center uppercase'>
             {labels.map((value, index) => {
               return (
                 <span
